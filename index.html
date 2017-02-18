@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zeus</title>
+	<script type="text/javascript" src="js/weather_fetch.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Rubik|Megrim|Monoton" rel="stylesheet"> 
+	<style type="text/css">
+		body{
+			background-color: rgb(34,34,34);
+			color: rgb(238,238,238);
+			font-family: "Rubik", "sans-serif";
+			font-size: 200%;
+			-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		}
+		#w_data{padding-bottom: 100px;}
+		#Zeus{font-family: "Megrim"}
+		#w_misc{font-size: 70%}
+
+	</style>
+</head>
+<body onload="fetch()">
+
+<center><h1 id="Zeus"><u>Zeus</u></h1></center>
+<center>
+<div class="weather_now">
+<span id ="w_icon"></span><br>
+<span id ="w_data"></span></br></br>
+<span id = "w_misc"></span>
+</div>
+
+</body>
+</html>
