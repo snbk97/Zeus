@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
+<!--kek-->
 <html>
 <head>
 	<title>Zeus</title>
-	<script type="text/javascript" src="js/weather_fetch.js"></script>
-
 	<link href="https://fonts.googleapis.com/css?family=Rubik|Megrim|Monoton" rel="stylesheet"> 
 	<style type="text/css">
 		body{
@@ -20,14 +19,20 @@
 	</style>
 </head>
 <body onload="fetch()">
-
-<center><h1 id="Zeus"><u>Zeus</u></h1></center>
+<div id="container" data-role="page">
 <center>
-<div class="weather_now">
-<span id ="w_icon"></span><br>
-<span id ="w_data"></span></br></br>
-<span id = "w_misc"></span>
+	<h1 id="Zeus"><u>Zeus</u></h1>
+	<br>
+			<input type="text" id="search" placeholder="Enter City/Region/Country" autocomplete="off">
+			<button id="btn" onclick="searchClick">SEARCH</button>
+	<br>
+	<div class="weather_now">
+	<span id ="w_icon"></span><br>
+	<span id ="w_data"></span></br></br>
+	<span id = "w_misc"></span>
+	</div>
+</center>
 </div>
-
 </body>
+<script type="text/javascript" src="js/weather_fetch.js"></script>
 </html>
