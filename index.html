@@ -1,38 +1,134 @@
-	<!DOCTYPE html>
-<!--kek-->
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Zeus</title>
-	<link href="https://fonts.googleapis.com/css?family=Rubik|Megrim|Monoton" rel="stylesheet"> 
-	<style type="text/css">
-		body{
-			background-color: rgb(34,34,34);
-			color: rgb(238,238,238);
-			font-family: "Rubik", "sans-serif";
-			font-size: 200%;
-			-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
-		}
-		#w_data{padding-bottom: 100px;}
-		#Zeus{font-family: "Megrim"}
-		#w_misc{font-size: 70%}
+    <head>
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<link rel="stylesheet" type="text/css" href="css/animation.css">
+		<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+		
+		<script type="text/javascript" src="js/preload.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/preload.css">
 
-	</style>
-</head>
-<body onload="fetch()">
-<div id="container" data-role="page">
-<center>
-	<h1 id="Zeus"><u>Zeus</u></h1>
-	<br>
-			<input type="text" id="search" placeholder="Enter City/Region/Country" autocomplete="off">
-			<button id="btn" onclick="searchClick">SEARCH</button>
-	<br>
-	<div class="weather_now">
-	<span id ="w_icon"></span><br>
-	<span id ="w_data"></span></br></br>
-	<span id = "w_misc"></span>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+
+		<script type="text/javascript">
+		var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+		var type = connection.type;
+
+		function updateConnectionStatus() {
+		  console.log("Connection type is change from " + type + " to " + connection.type);
+		}
+
+		connection.addEventListener('typechange', updateConnectionStatus);
+	
+		</script>
+    </head>
+
+    <body>
+    <div id="preloader">
+			<div id="status">&nbsp;</div>
 	</div>
-</center>
-</div>
+
+   <div class="row">
+    	<div class="col s4 m4 push-m1">
+    		<h1>Zeus</h1>
+		</div>
+		<div class="col s8 m8">
+		    <div class="card mcard animated tada">
+				<input id="search" type="text" placeholder="Enter a city name" autocomplete="off">
+			</div>
+		</div>
+    </div>
+
+    <div class="container">
+		<center>
+		<div class="separator"></div>
+		  <div class="row">
+	        <div class="col s12 m6 pull-m1 animated fadeInLeft">
+	          <div class="card" id="left" >
+	            <div class="card-image">
+	            	<div class="image-container" style="height: 300px; background-image: url(images/wall2.jpg); background-repeat: no-repeat; background-size: cover">
+	            		
+	            	</div>
+	              <span class="card-title">
+	              		<span id="w_icon" style="position: relative; float: top left; "></span>
+	              		<span id="w_name" style="text-align: left !important;float:left;margin-left: -1%"></span>
+	              </span>
+	            </div>
+	            <div class="card-content">
+	              <p id="card-content-data" style="font-size: 18px;">
+		            <span id = "w_misc"></span>
+		              </p>
+	            </div>
+	          </div>
+	        </div>
+
+	       <div class="row">
+	        <div class="col s12 m6">
+	          <div class="card" id="right" style="margin-top:20%">
+	            <div class="card-content">
+	              <span class="card-title"><span id="d_title"></span></span>
+	              <p><span id="d_info"></span></p>
+	            </div>
+	            <div class="card-action  grey darken-4 ">
+	              <a id="w_more" href="#" target="_tab" style="color:yelloworange">Read More</a>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      </div>
+	      </center>
+	</div>
+
+	   <footer class="page-footer white darken-3 black-text">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="blue-text">Zeus</h5>
+                <p class="black-text text-lighten-4">A minimal weather app, made out of boredom!</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container black-text">
+            &copy; 2017 Zeus
+            <a class="black-text text-lighten-4 right" href="http://www.snbk97.xyz">Portfolio</a>
+            </div>
+          </div>
+        </footer>
 </body>
-<script type="text/javascript" src="js/weather_fetch.js"></script>
-</html>
+
+<!-- DIVIDER -->
+
+      	<!--Import jQuery before materialize.js-->
+		
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/autoFetch.js"></script>
+		<script type="text/javascript" src="js/searchFetch.js"></script>
+    </body onload="">
+    <script type="text/javascript">
+    var s = (document.getElementById('search'))
+
+	$("#search").keypress(function(e){
+		if(e.which == 13){
+			searchFetch()
+			$(this).val('')
+			$
+	}})
+
+	$("#search").focus(function(){$(".mcard").addClass("expandmcard")})
+	$("#search").blur(function(){$(".mcard").removeClass("expandmcard")})
+	
+
+	  $(window).keypress(function(e){
+		if(($('#search').val().length != -1)){
+			$("#search").focus().val(e.key+e.keyCode(8))
+		}
+	})
+	
+</script>
+  </html>
