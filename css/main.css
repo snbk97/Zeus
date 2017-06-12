@@ -1,0 +1,68 @@
+@font-face{
+				font-family: "Adequate-ExtraLight";
+				src: url(fonts/Adequate-ExtraLight.ttf);
+
+			}
+			@font-face{
+				font-family: "Route159-Regular";
+				src: url(../fonts/Route159-Regular.otf);
+
+			}
+			@font-face{
+				font-family: "Capsuula";
+				src: url(../fonts/Capsuula.ttf);
+
+			}
+			html{
+				zoom:90%;
+				-moz-zoom:90%;
+			}
+			body{
+				font-family: Route159-Regular;
+				background-image: url(../images/w4.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+			}
+			h1{color: #fff;font-family: Capsuula !important}
+			.mcard {
+			    display: inline-table;
+			    width: 50%;
+			    padding: 0.3em 4em 0.3em 4em;
+			    margin-top:4% !important;
+			    transition: 0.3s linear;
+			    opacity: 1;
+			    transition: 1s ease-in-out;
+			}
+			.expandmcard{
+				width: 70% !important;
+				transition: 0.3s linear;
+			}
+			#search {
+			    border-bottom: 0px !important;
+			    text-align: center;
+			    font-size: 32px !important;
+			    margin-bottom: 0% !important;
+			    
+
+			}
+			#search:focus {
+			    border-bottom: 0	 !important;
+			    box-shadow: 0 0 0 0  #fff !important;
+			}
+			.vis{
+				opacity: 1 !important;
+				transition: 4s ease-in-out;
+			}
+			card{
+				border-radius: 20% !important;
+			}
+			.separator{
+				margin-top: 7%
+			}
+			#left{
+				opacity: 0
+			}
+			#right{
+				opacity: 0
+			}
