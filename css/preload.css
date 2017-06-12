@@ -1,0 +1,32 @@
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color:#344557;  change if the mask should have another color then white */
+  background-color: #262626;
+  z-index: 999;
+  /* makes sure it stays on top */
+}
+#status {
+  /*width: 200px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+*/
+  width: 300px;
+  height: 300px;
+  position:  relative;
+  top:45%;
+  left:45%;
+  /* centers the loading animation horizontally one the screen */
+  
+  /* centers the loading animation vertically one the screen */
+  background-image: url(../images/pre-blink.gif);
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+}
