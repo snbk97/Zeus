@@ -21,7 +21,7 @@ function getDetails(w_name,w_country){
 	function searchFetch(){
 	$('#search').blur();
 	var textVal = document.getElementById("search").value;
-	var weatherURL = "http://api.apixu.com/v1/current.json?key=" + key + "&q=" + textVal;
+	var weatherURL = "https://api.apixu.com/v1/current.json?key=" + key + "&q=" + textVal;
 
 	xmlhttp.open("GET", weatherURL, false);
 	xmlhttp.send();
@@ -38,8 +38,8 @@ function getDetails(w_name,w_country){
 	var weatherTemp_c = weatherData.temp_c;
 	var weatherTemp_f = weatherData.temp_f;
 	var weatherText = weatherData.condition.text;
-	var weatherIcon =  "http://" + weatherData.condition.icon;
-
+	var weatherIcon =  "https://" + weatherData.condition.icon;
+	console.log(weatherIcon)
 	var windSpeed = weatherData.wind_kph;
 	var windDir = weatherData.wind_dir;
 	var pressure = weatherData.pressure_mb;
