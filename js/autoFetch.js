@@ -33,8 +33,9 @@ function getDetails(w_name,w_country){
 }
 
 window.onload=function(){
-	//var query = getCity();
-	var weatherURL = "http://api.apixu.com/v1/current.json?key=" + key + "&q=auto:ip";
+	// var query = getCity();
+	var weatherURL = "https://api.apixu.com/v1/current.json?key=" + key + "&q=auto:ip";
+
 	xmlhttp.open("GET", weatherURL, false);
 	xmlhttp.send();
 
@@ -49,7 +50,7 @@ window.onload=function(){
 	var weatherTemp_c = weatherData.temp_c;
 	var weatherTemp_f = weatherData.temp_f;
 	var weatherText = weatherData.condition.text;
-	var weatherIcon =  "http://" + weatherData.condition.icon;
+	var weatherIcon =  "https://" + weatherData.condition.icon;
 
 	var windSpeed = weatherData.wind_kph;
 	var windDir = weatherData.wind_dir;
