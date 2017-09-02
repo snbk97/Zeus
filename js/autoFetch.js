@@ -33,8 +33,8 @@ function getDetails(w_name,w_country){
 }
 
 window.onload=function(){
-	var query = getCity();
-	var weatherURL = "http://api.apixu.com/v1/current.json?key=" + key + "&q=" + query;
+	//var query = getCity();
+	var weatherURL = "http://api.apixu.com/v1/current.json?key=" + key + "&q=auto:ip";
 	xmlhttp.open("GET", weatherURL, false);
 	xmlhttp.send();
 
